@@ -4,7 +4,7 @@
 # Set up the development environement
 #######################################
 
-PY_CHARM_VERSION=4.5.4
+WEBSTORM_VERSION=11.0.3
 
 PROVISIONED_ON=/etc/vm_provision_on_timestamp
 if [ -f "$PROVISIONED_ON" ]
@@ -33,11 +33,10 @@ apt-get update
 # Setup tools
 apt-get install -y git
 apt-get install -y sublime-text-installer
-apt-get install -y default-jdk  #needed for pycharm
+apt-get install -y default-jdk  #needed for WebStorm
 apt-get install -y meld #visual diff/merge tool
 apt-get install -y jq #json query command line tool
 apt-get install -y vim
-apt-get install -y libldap2-dev libsasl2-dev #these are needed to compile python-ldap for atom
 
 # Setup python
 apt-get install -y python python-pip
@@ -75,15 +74,16 @@ chown -R vagrant:vagrant "$SUBLIME_INSTALL_PACKAGE_DIR"
 chown -R vagrant:vagrant "$SUBLIME_PACKAGE_DIR"
 chown -R vagrant:vagrant "$SUBLIME_DIR"
 
-# Install PyCharm
+# Install WebStorm
 # Don't download if the package already exists locally on the host
-if [ ! -f /vagrant/pycharm-professional-$PY_CHARM_VERSION.tar.gz ]; then
-    echo "PyCharm not found. Downloading..."
-    wget -nv -P /vagrant/ http://download-cf.jetbrains.com/python/pycharm-professional-$PY_CHARM_VERSION.tar.gz
+if [ ! -f /vagrant/WebStorm-$WEBSTORM_VERSION.tar.gz ]; then
+    echo "WebStorm not found. Downloading..."
+    wget -nv -P /vagrant/ http://download.jetbrains.com/webstorm/WebStorm-$WEBSTORM_VERSION.tar.gz
+
 fi
 
-tar -xvf /vagrant/pycharm-professional-$PY_CHARM_VERSION.tar.gz
-chown -R vagrant:vagrant pycharm-$PY_CHARM_VERSION/
+tar -xvf /vagrant/WebStorm-$WEBSTORM_VERSION.tar.gz
+chown -R vagrant:vagrant WebStorm-$WEBSTORM_VERSION/
 
 # Install Chrome
 apt-get install -y google-chrome-stable
