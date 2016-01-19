@@ -1,5 +1,6 @@
 .vagrant
 pycharm-*
+WebStorm-*
 .devex
 .Trash*
 .utils*

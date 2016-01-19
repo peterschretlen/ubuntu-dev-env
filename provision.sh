@@ -41,6 +41,10 @@ apt-get install -y vim
 # Setup python
 apt-get install -y python python-pip
 
+# Install node
+curl --silent --location https://deb.nodesource.com/setup_4.x | bash -
+apt-get install -y nodejs
+
 # Add docker
 curl -sSL https://get.docker.com/ | sh
 
