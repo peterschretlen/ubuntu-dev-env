@@ -5,7 +5,6 @@ Vagrant.configure(2) do |config|
 
   config.vm.box = "box-cutter/ubuntu1404-desktop"
   config.vm.network "forwarded_port", guest: 8000, host: 8080
-  #config.vm.network "private_network", ip: "192.168.56.120"
   config.vm.hostname = "ubuntu-dev-env"
 
   config.vm.provider "virtualbox" do |vb|
