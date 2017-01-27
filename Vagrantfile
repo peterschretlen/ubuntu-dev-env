@@ -3,7 +3,7 @@
 
 Vagrant.configure(2) do |config|
 
-  config.vm.box = "box-cutter/ubuntu1404-desktop"
+  config.vm.box = "box-cutter/ubuntu1604-desktop"
   config.vm.network "forwarded_port", guest: 8000, host: 8080
   config.vm.hostname = "ubuntu-dev-env"
 
